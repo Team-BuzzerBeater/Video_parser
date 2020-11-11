@@ -29,4 +29,11 @@ def showfirstshoot(year = 9, round = 1, team = 0):
     print(rdjson2[0]['SEC_TIME'])
     print(rdjson2[0]['PLAYER_NAME'])
 
-showfirstshoot(9,6,1)
+def showtimejson(year = 9, round = 1, team = 0):
+    rdjson = reader(year,round,team)
+    rdjson.sort(key = lambda play : (play['PERIOD_ID'],play['MIN_TIME'], play['SEC_TIME']))
+    for play in rdjson:
+        print(play['MIN_TIME'],' ',play['SEC_TIME'],' ',play['PLAYER_NAME'])
+
+
+showtimejson(9,12,5)#showfirstshoot(9,12,5)
