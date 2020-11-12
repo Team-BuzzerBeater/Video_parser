@@ -74,7 +74,7 @@ for i in range(video_num):
         new_file_name = os.path.join('./clip/',new_file_name)
         # 빠르지만 생성된 video clip의 길이가 약간 이상함
        # ffmpeg_extract_subclip(video_file_name, start_time, end_time, targetname=new_file_name)
-    # 느리지만 정확
-    with VideoFileClip(os.path.join('./data/',video_file_name)) as video:
-        new = video.subclip(start_time, end_time)
-        new.write_videofile('pycharmvideo.mp4', audio_codec='aac')
+        # 느리지만 정확
+        with VideoFileClip(os.path.join('./data/',video_file_name)) as video:
+            new = video.subclip(start_time, end_time)
+            new.write_videofile('pycharmvideo.mp4', audio_codec='aac')
